@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import dogImage from "../assets/dog.png";
+import LeftPanel from "./leftPanel";
 
 function CircleIcon({ active }) {
   return (
@@ -284,58 +284,7 @@ export default function LiquidityLocker() {
 
   return (
     <div style={styles.root}>
-
-      {/* ── Icon Rail ── */}
-      <div style={styles.iconRail}>
-        <div style={{ marginBottom: 12 }}>
-          <img
-            src={dogImage}
-            alt="logo"
-            onClick={() => navigate("/")}
-            style={{ width: 34, height: 34, borderRadius: "50%", objectFit: "cover", display: "block", cursor: "pointer" }}
-          />
-        </div>
-        <div style={{ width: 28, height: 1, background: "#181f2a", margin: "4px 0 8px" }} />
-
-        {/* Dashboard icon — navigates home */}
-        <div style={railBtn(false)} onClick={() => navigate("/")}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <rect x="1" y="1" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.9" />
-            <rect x="9" y="1" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.9" />
-            <rect x="1" y="9" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.9" />
-            <rect x="9" y="9" width="6" height="6" rx="1.5" fill="currentColor" opacity="0.9" />
-          </svg>
-        </div>
-
-        {/* Browser icon — active (current page) */}
-        <div style={railBtn(true)}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.4" />
-            <circle cx="8" cy="8" r="2.5" stroke="currentColor" strokeWidth="1.4" />
-            <line x1="8" y1="1.5" x2="8" y2="5"    stroke="currentColor" strokeWidth="1.4" />
-            <line x1="8" y1="11"  x2="8" y2="14.5" stroke="currentColor" strokeWidth="1.4" />
-            <line x1="1.5" y1="8" x2="5"    y2="8"  stroke="currentColor" strokeWidth="1.4" />
-            <line x1="11"  y1="8" x2="14.5" y2="8"  stroke="currentColor" strokeWidth="1.4" />
-          </svg>
-        </div>
-
-        {/* ILOs icon */}
-        <div style={railBtn(false)} onClick={() => navigate("/ilos")} title="ILO's">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <rect x="1" y="4" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.4" />
-            <path d="M4 4V3a2 2 0 014 0v1" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-            <line x1="8" y1="8" x2="8" y2="10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-          </svg>
-        </div>
-
-        <div style={{ flex: 1 }} />
-
-        {/* Flag */}
-        <div style={{ marginBottom: 4 }}>
-          <img src="https://flagcdn.com/w20/gb.png" alt="EN"
-            style={{ width: 20, height: 14, borderRadius: 2, objectFit: "cover" }} />
-        </div>
-      </div>
+      <LeftPanel />
 
       {/* ── Label Sidebar ── */}
       <div style={styles.labelSidebar}>
@@ -849,12 +798,7 @@ export default function LiquidityLocker() {
             display: "flex", justifyContent: "space-between",
             alignItems: "flex-start", flexWrap: "wrap", gap: 20, marginTop: 20,
           }}>
-            <img
-              src={dogImage}
-              alt="logo"
-              onClick={() => navigate("/")}
-              style={{ width: 36, height: 36, borderRadius: "50%", objectFit: "cover", cursor: "pointer" }}
-            />
+            
             <div style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
               {[
                 ["Careers", "About Bullypad", "Council", "Apply for Launchpad"],
