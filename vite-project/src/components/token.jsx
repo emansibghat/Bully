@@ -275,7 +275,7 @@ export default function TokenMinter() {
                 if (item.locked) return;
                 setActiveNav(item.label);
                 if (item.label === "Liquidity Locker") navigate("/locker");
-                if (item.label === "Create ILO") navigate("/ilos");
+                if (item.label === "Create ILO") navigate("/create");
                 if (item.label === "Token Minter") navigate("/token-minter");
               }}
               onMouseEnter={e => {
