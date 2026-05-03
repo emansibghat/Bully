@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import LeftPanel from "../components/leftPanel";
-import dogImage from "../assets/Dog.png";
+import dogImage from "../assets/dog.png";
 
 function LogoImg() {}
 
